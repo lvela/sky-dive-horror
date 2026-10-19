@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Sky Dive Horror</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0d10; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    canvas { display: block; }
+    #overlay {
+      position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(ellipse at center, rgba(40,0,0,0.55), rgba(0,0,0,0.85));
+      color: #eee; z-index: 10; padding: 16px; box-sizing: border-box;
+    }
+    #overlay.hidden { display: none; }
+    .card { max-width: 560px; text-align: center; }
+    h1 { font-size: clamp(32px, 7vw, 56px); margin: 0 0 8px; letter-spacing: 2px; color: #ff3b2f; text-shadow: 0 0 24px rgba(255,40,20,0.6); }
+    .tag { opacity: 0.85; margin: 0 0 20px; font-size: 17px; }
+    .controls { text-align: left; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 16px; font-size: 14px; line-height: 1.6; margin-bottom: 18px; }
+    .controls b { color: #ffd23a; }
+    #play { font-size: 18px; padding: 12px 26px; border-radius: 8px; border: 1px solid #ff3b2f; background: #2a0a08; color: #fff; cursor: pointer; }
+    #play:hover { background: #4a120e; }
+    .note { margin-top: 14px; font-size: 13px; opacity: 0.65; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="overlay">
+    <div class="card">
+      <h1>SKY DIVE HORROR</h1>
+      <p class="tag">You saw something you shouldn't have. Now the mob has you on a cargo plane at 3,200 m.<br>Run for the ramp. Jump. Survive the fall.</p>
+      <div class="controls">
+        <div><b>Meta Quest:</b> press <b>ENTER VR</b> below. Left stick moves, right stick snap-turns, <b>trigger</b> starts the game and pulls your chute. Dodge with your body too: lean, step and duck.</div>
+        <div style="margin-top:8px"><b>Browser:</b> <b>WASD</b> move · <b>mouse</b> look · <b>C</b> duck · <b>Space / click</b> start and pull chute.</div>
+      </div>
+      <button id="play">PLAY IN BROWSER</button>
+      <div class="note">Stay out of the red beams, sidestep what the hitmen throw, pull your chute below 1,500 m and steer for the smoke flare.</div>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
